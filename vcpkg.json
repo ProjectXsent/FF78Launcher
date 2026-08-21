@@ -1,7 +1,7 @@
 {
   "name": "ff78launcher",
   "version": "0.3.0",
-  "builtin-baseline": "a4275b7eee79fb24ec2e135481ef5fce8b41c339",
+  "builtin-baseline": "c3867e714dd3a51c272826eea77267876517ed99",
   "dependencies": [
     "plog",
     "stackwalker",
