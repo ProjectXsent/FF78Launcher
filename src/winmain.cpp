@@ -158,6 +158,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			write_ffsound();
 		}
 
+		if (uses_ffnx)
+			PLOGI.printf("Detected FFNx support");
+		else if (ff7_estore_edition)
+			PLOGI.printf("Detected eStore Edition");
+
 		// Initialise the semaphores required to talk with the official driver
 		gameCanReadMsgSem = CreateSemaphoreA(NULL, 0, 1, launch_chocobo ? "choco_gameCanReadMsgSem" : (ff8 ? "ff8_gameCanReadMsgSem" : "ff7_gameCanReadMsgSem"));
 		gameDidReadMsgSem = CreateSemaphoreA(NULL, 0, 1, launch_chocobo ? "choco_gameDidReadMsgSem" : (ff8 ? "ff8_gameDidReadMsgSem" : "ff7_gameDidReadMsgSem"));
