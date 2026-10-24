@@ -15,6 +15,9 @@
 
 #pragma once
 
+#include <string>
+
+extern std::string language;
 extern bool fullscreen;
 extern long window_width;
 extern long window_height;
@@ -26,5 +29,6 @@ extern bool pause_game_on_background;
 extern long sfx_volume;
 extern long music_volume;
 extern bool launch_chocobo;
+extern bool skip_keyboard_prompt;
 
 void read_cfg();

@@ -17,6 +17,10 @@
 
 DWORD WINAPI process_game_messages( LPVOID lpParam );
 
+// Starts a background thread that disables the FF7 keyboard prompt inside the
+// running game's AF3DN.P driver (no file on disk is modified). FF7 only.
+HANDLE start_prompt_bypass(HANDLE hProcess);
+
 void send_locale_data_dir();
 void send_user_save_dir();
 void send_install_dir();

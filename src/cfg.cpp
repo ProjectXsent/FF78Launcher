@@ -13,6 +13,8 @@
 //    GNU General Public License for more details.                          //
 /****************************************************************************/
 
+#include <algorithm>
+#include <cctype>
 #include <toml++/toml.h>
 
 #include "cfg.h"
@@ -20,6 +22,7 @@
 
 #define FF78_CFG_FILE "FF78Launcher.toml"
 
+std::string language;
 bool fullscreen;
 long window_width;
 long window_height;
@@ -31,6 +34,7 @@ bool pause_game_on_background;
 long sfx_volume;
 long music_volume;
 bool launch_chocobo;
+bool skip_keyboard_prompt;
 
 void read_cfg()
 {
@@ -53,6 +57,8 @@ void read_cfg()
 	}
 
   // Read config values
+	language = std::string(config["language"].value_or("auto"));
+	std::transform(language.begin(), language.end(), language.begin(), [](unsigned char c) { return (char)std::tolower(c); });
 	fullscreen = config["fullscreen"].value_or(false);
   window_width = config["window_width"].value_or(0);
 	window_height = config["window_height"].value_or(0);
@@ -64,6 +70,7 @@ void read_cfg()
   sfx_volume = config["sfx_volume"].value_or(100);
   music_volume = config["music_volume"].value_or(100);
 	launch_chocobo = config["launch_chocobo"].value_or(false);
+	skip_keyboard_prompt = config["skip_keyboard_prompt"].value_or(true);
 
   // Window width or height size can't be less then 0
 	if (window_width < 0) window_width = 0;
