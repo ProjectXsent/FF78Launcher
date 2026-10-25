@@ -8,7 +8,7 @@ An alternative launcher for FF7/FF8 Steam and eStore editions
 
 > **Please note:** Make a backup of your launcher or use the Steam Game files integrity check if something goes wrong and you're not able to launch the game.
 
-1. Download the latest release from https://github.com/julianxhokaxhiu/FF78Launcher/releases
+1. Download the [latest release](https://github.com/ProjectXsent/FF78Launcher/releases/latest).
 2. Extract it to your target FF7 or FF8 Steam folder.
 3. Replace all files when asked.
 4. You can now run the game via Steam as usual. Enjoy!
